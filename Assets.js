@@ -24,6 +24,7 @@ function loadAssets(callback){ //quando carregar os assets chamar o callback
         }
         return spriteImage;
     }
+    //carregamento dos sprites
     sprites.background = loadSprite('spr_background4.png');
     sprites.stick = loadSprite('spr_stick.png');
     sprites.BolaBranca = loadSprite('spr_ball2.png');
@@ -34,6 +35,8 @@ function loadAssets(callback){ //quando carregar os assets chamar o callback
     LoopAssetsLoad(callback);
 }
 
+
+//cores das bolas
 function getBallSpriteByColor(color){
     switch(color){
         case COLOR.RED:
