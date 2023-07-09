@@ -8,10 +8,14 @@ function Taco(position, ondisparo){
     this.origem = TACO_ORIGIN.copy();
     this.forca = 0;
     this.ondisparo = ondisparo;
-    this.dispr = false;
+    this.dispr = false; // taco em estado de disparo
 }
 
 Taco.prototype.update = function(){
+
+if(this.dispr){
+    return;
+}
 
 
     if(Mouse.left.down){
@@ -21,13 +25,13 @@ Taco.prototype.update = function(){
     }
     this.updateRotation();
 
-
-
     // testar movimento
     // this.position.x++;
+
     // Testar movimento no rato
     // this.position = Mouse.position;
-    //testar botoes
+
+    //testar botoes rato
     //if(Mouse.left.pressed){
      //   console.log("esquerda")
     //}
@@ -47,8 +51,8 @@ Taco.prototype.draw = function(){
 }
 
 Taco.prototype.updateRotation = function(){
-
     // https://sinepost.wordpress.com/2012/02/16/theyve-got-atan-you-want-atan2/
+    // codigo da rotação do taco feito utilizando link em cima para info
     let opposite = Mouse.position.y - this.position.y;
     let adjacent = Mouse.position.x - this.position.x;
 
@@ -56,6 +60,9 @@ Taco.prototype.updateRotation = function(){
 }
 
 Taco.prototype.aumentaForca = function(){
+    if(this.forca > 4000){ //forca maxima
+        return;
+    }
     this.forca += 100;
     //afastar o eixo do x (ir pra tras)
     this.origem.x += 5;

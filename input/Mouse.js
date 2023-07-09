@@ -8,6 +8,16 @@ function handleMouseMove(evento){
 function handleMouseDown(evento){
     handleMouseMove(evento);
 
+//Econtrar localizacao de pixel
+//https://stackoverflow.com/questions/72379573/get-canvas-pixel-position-from-mouse-coordinates
+const canvas = document.querySelector( 'canvas' );    
+const bb = canvas.getBoundingClientRect();
+    const x = Math.floor( (evento.clientX - bb.left) / bb.width * canvas.width );
+    const y = Math.floor( (evento.clientY - bb.top) / bb.height * canvas.height );
+    
+    console.log({ x, y });
+
+
 // qual botao esta down(primido) neste momento 1 left 2 middle 3 direita
     if (evento.which === 1){
         if(!Mouse.left.down)
