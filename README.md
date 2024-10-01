@@ -13,7 +13,9 @@ No Game.js temos a inicialização e o mainloop do jogo.
 No Canvas.js temos a instância do canvas2d para funcionalidades de desenho do canvas
 O Vector.js contem funções que eu utilizei ao longo do código (estas serão explicadas em detalhe durante o relatório)
 O color.js contem as cores das bolas
-O taco.js e bola.js e gameworld.js contem o código mais imporante para o funcionamento do jogo que será explicado ao longo do relatório
+O taco.js e bola.js e gameworld.js contem o código mais imporante para o funcionamento.
+
+O jogo está explicado no longo do relatório
 
 
  
